@@ -1,0 +1,88 @@
+<!DOCTYPE html lang="pt-br">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ativação Profética</title>
+  <link rel="icon" type="image/png" href="./icons/LogoEscudoBranco.png"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="c-loader" id="c-loader"></div>
+  <header id="header" hidden>
+    <h1>ATIVAÇÃO</h1>
+    <h2>PROFÉTICA</h2>
+    <div id="bgprofetica"></div>
+  </header>
+  <div class="container" id="container" hidden>
+
+    <div id="text">
+      <p>Graça e Paz amados irmãos,</p>
+      <p>O evento está chegando e estamos reservando o <strong>melhor que podemos oferecer</strong> para que você tenha acesso ao conhecimento da <strong>Verdade</strong>. Nos dias <strong>28 e 29 de Julho</strong>, o <strong>Apóstolo Robson Martins</strong> estára ministrando aulas com extrema riqueza em <strong>conhecimento da Palavra</strong> e <strong>vivência no Espírito.</strong></p>
+      <p>A <strong>Ativação Profética</strong> é um tema com grande relevância para o tempo em que estamos vivendo. Entender o profético te fará ter uma <strong>clareza do mundo espiritual</strong> como você nunca teve, desenvolvendo o dom profético você irá acessar <strong>um novo nível no espiríto</strong> e irá <strong>impactar</strong> o mundo ao seu redor.</p>
+      <p>Durante a escola, poderão ser abordados os temas listados na Parte 1 do Módulo 3 <i>(Ativação Profética)</i> escrito pelo Apóstolo Robson Martins. <br>Temas como:
+        <li>Fundamento do Profético</li>
+        <li>As fontes e origens da Profecia</li>
+        <li>Dom Profético X Ofício do Profeta</li>
+        <li>Como julgar e receber a palavra Profética</li>
+        <li>Componentes de um ministro</li>
+        <li>O operar do ministério Profético</li> <br>
+        O módulo está disponível para venda <i><a target="_blank" href="https://loja.escoladefogo.com/ativacao-profetica-entrando-nas-dimensoes-do-espirito/p">clicando aqui</a></i> e estará disponível no dia do evento <i>(com uma condição <strong>especial</strong> para compra)</i>. Mas caso você não tenha ainda o módulo de estudos, ou não possa adquiri-lo no dia do evento, pode ficar despreocupado que o módulo não é obrigatório para a participação do evento.</p>
+      <p><strong>Cronograma:</strong>
+        <li>28/07 inicio as 19:00</li>
+        <li>29/07 inicio as 14:00 até as 17:00</li>
+        <li>1 hora de intervalo</li>
+        <li>retorno as 18:00</li></p>
+      <p><strong>Local do evento:</strong> Av. Américo Vespúcio, 914, Aparecida</p>
+      <p><strong>Investimento:</strong>
+      <li>De 0 a 10 anos: Gratuito</li>
+      <li>De 11 a 14 anos: Meia entrada</li>
+      <li>A partir de 15 anos: Inteira</li></p>
+      <p><strong>Valor do ingresso: </strong>R$100,00</p>
+      <p>Será uma honra recebê-los para a escola de <strong>Ativação Profética</strong> em Belo Horizonte.</p>
+      <input type="button" value="Inscreva-se agora" onclick="Form()">
+    </div>
+    
+    <form id='form' hidden>
+      <input type="text" name="nome" id="nome" placeholder="Nome Completo">
+      <input type="tel" name="telefone" id="telefone" placeholder="(31)99999-9999" onkeyup="handlePhone(event)">
+      Qual o seu ministério?
+      <select id="selectministerio" onchange="Ministerio(this.value)">
+        <option selected disabled value="">Selecione</option>
+        <option value="IEF-BH">IEF - BH</option>
+        <option value="IEF-BSB">IEF - BSB</option>
+        <option value="IEF-RJ">IEF - RJ</option>
+        <option value="IEF-SP">IEF - SP</option>
+        <option value="Outro">Outro</option>
+      </select><br>
+      <input type="text" id="ministerio" placeholder="Qual ministério você faz parte?" hidden>
+      Você trará crianças para o evento? (De 3 a 10 anos)  <input type="radio" name="criancas" id="sim" value="Sim" onchange="Criancas(this.value)"> Sim <input type="radio" name="criancas" id="nao" value="Nao" onchange="Criancas(this.value)"> Não <br>
+      <div id="criancas" hidden>Quantas crianças? <input type="number" id="numCriancas"></div><br>
+      <input type="text" id="cupom" placeholder="Cupom de desconto">
+      Qual a forma de pagamento?
+      <select name="" id="pagamento">
+        <option selected disabled value="">Selecione</option>
+        <option value="pix">PIX</option>
+        <option value="cartao">Cartão de Crédito</option>
+      </select>
+      <p>Qual tipo de ingresso?
+          <input type="radio" name="ingresso" id="inteira" value="Inteira"> Inteira
+          <input type="radio" name="ingresso" id="meia" value="Meia"> Meia
+      </p>
+      <input type="button" value="Enviar" onclick="EnviarDados(this.form.nome.value, this.form.telefone.value, this.form.selectministerio.value, this.form.ministerio.value,this.form.numCriancas.value, this.form.pagamento.value, this.form.cupom.value)">
+    </form>
+
+    <div class="sucesso" id="sucesso" hidden>
+      <img src="./icons/sucesso.png" alt=""><br><br><br>
+      <p>Sua inscrição foi finalizada com sucesso</p>
+      <p>Entraremos em contato via WhatsApp no número cadastrado pelo formulário anterior.</p>
+      <p>Obs.: O pagamento será tratado via WhatsApp, mas fique tranquilo, vamos utilizar métodos de pagamentos seguros.</p>
+      <p>Deus abençoe!</p>
+      <p>Muito obrigado! IEF BH</p>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
